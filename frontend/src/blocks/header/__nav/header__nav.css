@@ -1,0 +1,7 @@
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 10px 0 0 0; /*вычислено с помощью pixel perfect*/
+  padding: 0;
+}
