@@ -8,6 +8,8 @@ const BadRequest = require('../errors/bad-request');
 const NotFound = require('../errors/not-found');
 const Conflict = require('../errors/conflict');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 // возвращает всех пользователей
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -120,7 +122,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        'super-strong-secret',
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         { expiresIn: '7d' },
       );
       // рекомендуем записывать JWT в httpOnly куку.
