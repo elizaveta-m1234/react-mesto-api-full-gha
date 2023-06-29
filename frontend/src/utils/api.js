@@ -7,7 +7,7 @@ class Api {
   _setHeaders() {
     const headers = {
         'Content-Type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
     }
     return headers;
   }

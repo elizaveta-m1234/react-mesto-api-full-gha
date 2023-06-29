@@ -180,7 +180,7 @@ function App() {
         .then((res) => {
           handleLogin();
           api.setToken(token);
-          setUserEmail(res.data.email);
+          setUserEmail(res.email);
           navigate('/mesto');
         })
         .catch((err) => {
