@@ -124,7 +124,7 @@ module.exports.login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       // рекомендуем записывать JWT в httpOnly куку.
-      res.cookie('jwt', token, { httpOnly: true }).send({ token }).end();
+      res.send({ token }).end();
     })
     .catch(next);
 };

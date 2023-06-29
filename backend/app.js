@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
@@ -37,7 +37,7 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(auth);
 
 app.use('/users', require('./routes/users'));

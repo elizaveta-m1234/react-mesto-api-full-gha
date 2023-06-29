@@ -4,7 +4,7 @@ const Unauthorized = require('../errors/unauthorized');
 
 module.exports = (req, res, next) => {
   // рекомендуем записывать JWT в httpOnly куку - вынимаем
-  const token = req.cookies.jwt;
+  const token = req.headers.authorization.replace('Bearer ', '');
 
   if (!token) {
     next(new Unauthorized('Ошибка авторизации'));
