@@ -152,6 +152,7 @@ function App() {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
           handleLogin();
+          api.setToken(res.token);
           setUserEmail(userData.email);
           navigate('/mesto', { replace: true })
         }
@@ -178,6 +179,7 @@ function App() {
       auth.getContent(token)
         .then((res) => {
           handleLogin();
+          api.setToken(token);
           setUserEmail(res.data.email);
           navigate('/mesto');
         })

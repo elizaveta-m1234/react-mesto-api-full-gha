@@ -12,6 +12,10 @@ class Api {
     return headers;
   }
 
+  setToken(token) {
+    this._headers.Authorization = `Bearer ${token}`;
+  }
+
   _getResponseData(res) {
     if (!res.ok) {
         return Promise.reject(`Ошибка: ${res.status}`); 
@@ -103,4 +107,7 @@ class Api {
 
 export const api = new Api({
   baseUrl: 'http://localhost:3001',
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });
