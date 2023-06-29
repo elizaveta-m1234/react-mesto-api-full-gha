@@ -48,5 +48,5 @@ class Auth {//по образцу api.js
   }
 }
 
-//export const auth = new Auth('http://localhost:3001')
+//export const auth = new Auth('http://localhost:3000')
 export const auth = new Auth('back.mesto.elizaveta-m123.nomoreparties.sbs')
