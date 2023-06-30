@@ -19,10 +19,12 @@ const cardSchema = new mongoose.Schema({
   owner: { // опишем требования к имени в схеме:
     type: mongoose.SchemaTypes.ObjectId, //
     required: true, // обязательное поле
+    ref: 'Owner',
   },
   likes: [{ // опишем требования к имени в схеме:
     type: mongoose.SchemaTypes.ObjectId, //
     default: [],
+    ref: 'Likes',
   }],
   createdAt: { // опишем требования к имени в схеме:
     type: Date, // это строка

@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес IP 158.160.30.62
+IP 158.160.30.62
 
 Frontend https://mesto.elizaveta-m1234.nomoreparties.sbs
 

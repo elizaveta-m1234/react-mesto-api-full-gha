@@ -107,7 +107,7 @@ class Api {
 
 export const api = new Api({
   // baseUrl: 'http://localhost:3000',
-  baseUrl: 'back.mesto.elizaveta-m123.nomoreparties.sbs',
+  baseUrl: 'http://back.mesto.elizaveta-m123.nomoreparties.sbs',
   headers: {
     'Content-Type': 'application/json'
   }
