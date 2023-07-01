@@ -8,7 +8,7 @@ const Forbidden = require('../errors/forbiden');
 
 // возвращает все карточки
 module.exports.getCards = (req, res, next) => {
-  Card.find({})
+  Card.find({}).sort({ createdAt: -1 })
     .then((cards) => res.send(cards))
     // При обработке ошибок в блоке catch они не выбрасываются через throw , а передаются в
     // централизованный обработчик ошибок с помощью next
