@@ -14,7 +14,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send(users))
-    .catch(next);
+    .catch(() => next(new InternalError('Ошибка по умолчанию')));
 };
 
 // возвращает пользователя по _id

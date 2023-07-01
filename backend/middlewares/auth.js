@@ -5,13 +5,14 @@ const Unauthorized = require('../errors/unauthorized');
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
-  // рекомендуем записывать JWT в httpOnly куку - вынимаем
-  const token = req.headers.authorization.replace('Bearer ', '');
+  const { authorization } = req.headers;
 
-  if (!token) {
+  if (!authorization || !authorization.startsWith('Bearer ')) {
     next(new Unauthorized('Ошибка авторизации'));
     return;
   }
+
+  const token = authorization.replace('Bearer ', '');
 
   let payload;
 
